@@ -4,7 +4,7 @@
     Author     : Juergen
 --%>
 
-<%@page import="resource.ViewResourceEnum"%>
+<%@page import="resource.ViewEnum"%>
 <%@page import="javax.faces.application.ViewResource"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     </head>
     <body>
         <%
-            response.sendRedirect(pageContext.getServletContext().getContextPath() + ViewResourceEnum.START.getView());
+            response.sendRedirect(pageContext.getServletContext().getContextPath() + ViewEnum.START.getView());
         %>
     </body>
 </html>

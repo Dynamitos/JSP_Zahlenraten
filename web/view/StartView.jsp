@@ -4,7 +4,7 @@
     Author     : Juergen
 --%>
 
-<%@page import="resource.ServletResourceEnum"%>
+<%@page import="resource.ServletEnum"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,11 +13,11 @@
         <title>HelloWorldStartView</title>
     </head>
     <body>
-        <h1>Hello World Start View</h1>
-        <form action="${pageContext.request.contextPath}<%=ServletResourceEnum.HELLOWORLD.getUrlPattern()  %>" method="GET">
-            Please enter a color:
-            <input type="text" name="color">
-            <input type="submit" name="submit" value="submit">
+        <h1>Zahlen raten!</h1>
+        <form action="${pageContext.request.contextPath}<%=ServletEnum.HELLOWORLD.getUrlPattern()  %>" method="GET">
+            Your Guess Here: 
+            <input type="text" name="guess" placeholder="Any Number"/>
+            <input type="submit" name="submit" value="submit"/>
         </form>
     </body>
 </html>

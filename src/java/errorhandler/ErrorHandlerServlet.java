@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import resource.ViewResourceEnum;
+import resource.ViewEnum;
 import utility.ServletUtil;
 
 @WebServlet(name = "ErrorHandlerServlet", urlPatterns = {"/ErrorHandler"})
@@ -40,22 +40,22 @@ public class ErrorHandlerServlet extends HttpServlet {
             requestUri = "Unknown";
         }
        
-        String paramUriPath = ViewResourceEnum.ERROR.getView() + 
+        String paramUriPath = ViewEnum.ERROR.getView() + 
                 "?message="+errorMsg;  
         
         if (throwable == null && statusCode == null) {
-            paramUriPath = ViewResourceEnum.ERROR.getView() + 
+            paramUriPath = ViewEnum.ERROR.getView() + 
                 "?message="+errorMsg;             
          // error handling
         } else if (throwable != null && statusCode != null)
         {
-            paramUriPath = ViewResourceEnum.EXCEPTION.getView() + 
+            paramUriPath = ViewEnum.EXCEPTION.getView() + 
                 "?message="+errorMsg+";status="+statusCode;             
         } else if (statusCode != null) {
-            paramUriPath = ViewResourceEnum.ERROR.getView() + 
+            paramUriPath = ViewEnum.ERROR.getView() + 
                 "?message="+errorMsg+";status="+statusCode;        
         } else {
-            paramUriPath = ViewResourceEnum.EXCEPTION.getView() + 
+            paramUriPath = ViewEnum.EXCEPTION.getView() + 
                 "?message="+errorMsg+";status="+statusCode;        
         }
         

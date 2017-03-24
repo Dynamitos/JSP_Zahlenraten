@@ -4,8 +4,8 @@
     Author     : Dynamitos5
 --%>
 
-<%@page import="resource.ViewResourceEnum" %>
+<%@page import="resource.ViewEnum" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<form action="${pageContext.request.contextPath}<%="/"+ViewResourceEnum.START.getView()%>" method="GET">
+<form action="${pageContext.request.contextPath}<%="/"+ViewEnum.START.getView()%>" method="GET">
     <input type="submit" value="HOME" name="Go Home">
 </form>

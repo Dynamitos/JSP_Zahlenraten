@@ -9,8 +9,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import resource.ServletResourceEnum;
-import resource.ViewResourceEnum;
+import resource.ServletEnum;
+import resource.ViewEnum;
 
 /**
  *
@@ -50,11 +50,11 @@ public class ServletUtil
         switch (mode)
         {
             case 0:
-                String errorUri = ViewResourceEnum.ERROR.getView() + "?message=" + msg;
+                String errorUri = ViewEnum.ERROR.getView() + "?message=" + msg;
                 forward(errorUri, request, response);
                 break;
             case 1:
-                String servlet = ServletResourceEnum.ERRORHANDLER.getUrlPattern();
+                String servlet = ServletEnum.ERRORHANDLER.getUrlPattern();
                 forward(servlet, request, response);
                 break;
             case 2:
